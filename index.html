@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This a ToDoList website">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="./script.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-logo">
+            <i class="fas fa-clipboard-list"></i>
+            <h1 id="website-name"> To-Do List </h1>
+        </div>
+    </header>
+    <main class="main">
+        <nav class="nav" id="nav">
+            <h2 class="project-title"> Projects</h2>
+
+            <ul class="task-list" data-lists>
+            </ul>
+
+            <form action="" data-new-list-form>
+
+                <input type="text" class="new list" data-new-list-input placeholder="new list name"
+                    aria-label="new list name" />
+                <div class="add-project-buttons">
+                    <button class="button-delete-project" data-delete-list-button>
+                        <i class="fas fa-trash-alt"></i>
+                        Delete
+                    </button>
+                    <button class="button-add-project" aria-label="new list name">
+                        <i class="fas fa-plus"></i>
+                        Add
+                    </button>
+                </div>
+            </form>
+        </nav>
+        <!-- Task -->
+        <div class="project-tasks" id="project-tasks" data-list-display-container>
+            <div class="todo-header">
+                <h2 class="project-name" data-list-title></h2>
+                <p class="task-count" data-list-count></p>
+            </div>
+
+            <div class="todo-body">
+                <div class="tasks" data-tasks></div>
+
+                <div class="add-task">
+
+                    <form class="task-form" action="" data-new-task-form>
+                        <input type="text" data-new-task-input class="new task" placeholder="new task name"
+                            aria-label="new task name" />
+                        <div class="tasks-buttons">
+                            <button class="button-delete" data-clear-complete-tasks-button> <i
+                                    class="fas fa-trash-alt"></i>
+                                Delete Tasks</button>
+                            <button class="button-add-task" aria-label="new task name">
+                                <i class="fas fa-plus"></i>
+                                Add Task</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox" />
+            <label>
+                <span class="custom-checkbox"></span>
+            </label>
+        </div>
+    </template>
+</body>
+
+</html>
