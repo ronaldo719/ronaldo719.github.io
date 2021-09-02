@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+:root {
+        --clr-primary: #99D3DF;
+        --clr-dark: #88BBD6;  
+        --clr-warning: #CDCDCD;
+        --clr-light: #E9E9E9 
+}
+
+*,
+*::before,
+*::after{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+}
+body {
+        font-family: lato, sans-serif;
+        font-size: 1.6rem;
+        color: black; 
+        line-height: 1.6;
+        height: 100%;
+        background-color: var(--clr-light)
+} 
+
+
+button, input{
+        border: none;
+        font-family: inherit;
+        outline: none;
+        color: inherit;
+} 
+button {
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        border-radius: 10px;
+        font-weight: bold;
+        background-color: var(--clr-primary);
+        border: 0;
+        
+}
+
+input {
+        width: 100%;
+        padding: 10px;
+        font-size: inherit;
+        border-radius: 5px;
+} 
+i{
+        margin-right: 10px;
+} 
+/* header css */
+.header{
+        background: var(--clr-dark);  
+        color: #F0F2F3;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+
+}
+
+.header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.fa-clipboard-list {
+        font-size: 2em;
+} 
+
+/* Main */
+.main {
+        display: flex;
+}
+.nav {
+        width: 300px;
+        padding: 20px;
+        height: 100vh; 
+        background-color: var(--clr-primary); 
+        border-right: 1px solid rgb(147, 147, 147);
+
+} 
+
+
+.button-default-project-list {
+        background-color: red;
+}
+.project-title{
+        padding: 10px;
+        margin-top: 10px;
+        font-size: 2rem;
+} 
+.task-list {
+        margin-left: 30px;
+        font-size: 1.2rem;
+        line-height: 1.7;
+        list-style: circle;
+        padding-left: 1.1rem;
+        
+}
+
+.list-name {
+        cursor: pointer;
+        text-transform: capitalize;
+}
+
+
+.list-name:hover {
+        opacity: 0.7;
+}
+
+.new {
+        background: transparent;
+        color: inherit;
+        border: 0;
+        border-bottom: 1px solid currentColor;
+        font-size: inherit;
+        outline: none;
+        transition: border-bottom 150ms ease-in;
+        padding: 0.25em;
+}
+
+.add-project-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        gap: 20px;
+        
+}
+
+.button-add-project {
+        transition: opacity 250ms ease-in;
+}
+.button-delete-project {
+        transition: opacity 250ms ease-in;
+}
+.button-add-project:hover {
+        opacity: 0.7;
+}
+.button-delete-project:hover {
+        opacity: 0.7;
+}
+
+.new.list{
+        font-size: 1.3rem;
+        text-transform: capitalize; 
+}
+
+.new.task {
+        margin-bottom: 0;
+        padding: 0;
+}
+
+.new::placeholder {
+        opacity: 0.4;
+        font-size: 0.9em;
+        color: black;
+        text-transform: capitalize;
+}
+.new:focus {
+        border-bottom-width: 3px;
+}
+.new:focus::placeholder {
+        opacity: 0.15;
+}
+.active-list {
+        font-weight: 700;
+}
+
+.project-tasks {
+        border: 1px solid rgb(147, 147, 147);
+        border-radius: 20px;
+        --spacer: 2rem;
+        width: 800px;
+        margin: 0 auto;
+        background-color: var(--clr-light);
+        padding-bottom: 15px;
+        margin-top: 20px;
+        height: 20%;
+}
+
+
+.todo-header {
+        padding: var(--spacer);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;   
+        text-transform: capitalize;
+        background: var(--clr-warning);
+}
+
+.task-count {
+        margin: 0;
+        font-size: 1rem;
+}
+
+.todo-body {
+        padding: var(--spacer);
+        position: relative;
+        background-color: inherit;
+}
+
+[type="checkbox"] {
+        opacity: 0;
+        position: absolute;
+}
+
+.task label {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        margin-bottom: 1.25em;
+}
+
+.task {
+        position: relative;
+}
+
+.task::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: 1px;
+        bottom: 0.5em;
+        background: currentColor;
+        opacity: 0.1;
+}
+
+.custom-checkbox {
+        --size: 0.75em;
+        display: inline-block;
+        width: var(--size);
+        height: var(--size);
+        margin-right: var(--size);
+        cursor: pointer;
+        border: 2px solid var(--clr-primary);  
+        border-radius: 50%;
+        transform: scale(1);
+        transition: transform 300ms ease-in-out;
+}
+
+.task:hover .custom-checkbox, [type="checkbox"]:focus + label .custom-checkbox{
+        transform: scale(1.2);
+        color: var(--clr-primary);  
+}
+
+[type="checkbox"]:checked + label .custom-checkbox{ 
+        background: var(--clr-primary);  
+        border-color:var(--clr-primary);  
+        box-shadow: inset 0 0 0px 3px white;
+}
+
+[type="checkbox"]:checked + label {
+        opacity: 0.5;
+}
+
+.task label::after {
+        content: '';
+        position: absolute;
+        left: 1.5em;
+        right: 0;
+        height: 3px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 150ms ease-in-out;
+}
+
+[type="checkbox"]:checked + label::after {
+        transform: scaleX(1);
+        transform-origin: right;
+}
+
+.tasks-buttons {
+        display: flex;
+        align-items: center; 
+        justify-content: space-evenly; 
+        margin-top: 10px; 
+        gap: 20px; 
+}
+
+.button-add-task {
+        background: 0; 
+        font-size: 0.65em;
+}
+
+.button-delete {
+        background: 0;
+        font-size: 0.65em;
+}
+
+.button-delete:hover {
+        opacity: 0.5;
+        font-size: 0.7em;
+}
+
+.button-add-task:hover {
+        opacity: 0.5;
+        font-size: 0.7em;
+}
+
+
