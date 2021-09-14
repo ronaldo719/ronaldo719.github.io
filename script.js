@@ -144,3 +144,4 @@ function clearElement(element) {
     }
 }
 
+render()
